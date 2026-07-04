@@ -1,0 +1,142 @@
+main{
+    width: 1440px;
+}
+.ticket{
+    margin: 96px 126px 60px 126px;
+    &_title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 82px;
+    font-weight: 700;
+     }
+
+     &_text{
+    margin: 0 126px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+     }
+
+     &_form{
+        width: 650px;
+        height: 34px;
+        background: #ffffff;
+        border-radius: 6px ;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
+        margin: 0 400px;
+     }
+     
+}
+.passenger_icon{
+    margin: -5px;
+    width: 17px;
+    height: 17px;
+    
+}
+.passenger-btn{
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 10px 0;
+    width: 20px;
+    border: none;
+    background: none;
+    color: #646262;
+    &:hover{
+        cursor: pointer;
+        color: #401585;
+    }
+}
+
+.sending{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 640px;
+    margin: 0 400px;
+    align-items: center;
+    font-size: 16px;
+    color: #ffffff;
+    gap: 30px;
+}
+.departure, .arrival{
+    display: flex;
+    flex-direction: column;
+   
+}
+.bottom{margin-top: 60px;}
+.city-label{
+    font-weight: 600;
+    padding: 24px 0 16px;
+}
+.citi-select{ width: 320px;}
+.citi-select__control{padding: 8px 25px 8px 8px; border-radius: 8px !important; }
+.citi-select__option{color:#401585 !important;}
+
+
+.city-input{
+    width: 300px;
+    height: 50px;
+    padding: 0 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.button-passanger{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 24px 400px;
+    padding: 15px 0;
+    width: 675px;
+    border: none;
+    border-radius: 10px;
+    background-color:#3039c1 ;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    &:hover{
+        cursor: pointer;
+        color: #401585;
+    } 
+}
+.button-passanger:hover::before{
+        content: "";
+        position: absolute;
+        top:0;
+        left:-75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+        transform: skewX(-25deg);
+        animation: shine 0.7s ease;
+
+    }
+@keyframes shine{
+        100%{
+            left:130%;
+        }
+    }
+
+    .react-datepicker, .react-datepicker__header, {
+        width: 350px;
+        border: none;
+    }
+
+    .react-datepicker__day-names, .react-datepicker__day{
+        font-size: 19px;
+    }
+    .react-datepicker__header{
+        background: none;
+    }
+
+
+

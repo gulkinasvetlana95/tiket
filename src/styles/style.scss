@@ -1,0 +1,29 @@
+@import './main.scss';
+@import './flights.scss';
+
+
+
+.presentation{
+    color: white;
+    
+    
+     &_list{
+        padding: 0;
+        margin: 41px 64px ;
+        display: flex;
+        list-style: none;
+         gap: 90px;
+        
+    }
+    &_item{
+        margin: 10px;
+        list-style: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover{
+            font-weight: 700;
+        }
+      }
+}
