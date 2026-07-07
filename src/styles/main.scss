@@ -53,6 +53,12 @@ main{
         color: #401585;
     }
 }
+.train{
+    color: white;
+}
+.trainSVG{
+    color: black;
+}
 
 .sending{
     display: flex;
@@ -94,7 +100,7 @@ main{
 .button-passanger{
     font-weight: 600;
     font-size: 20px;
-    margin: 24px 400px;
+    margin: 24px 400px 50px;
     padding: 15px 0;
     width: 675px;
     border: none;

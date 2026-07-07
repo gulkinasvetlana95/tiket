@@ -1,0 +1,178 @@
+
+.picture, .pictureTwo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    margin: 30px;
+
+}
+    
+
+.picture{
+    border-radius: 8px;
+    width: 47%;
+    height: 150px;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.45) 45%,
+            rgba(0, 0, 0, 0) 80%
+        ), url('../img/beach.jpg');
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 390px;
+    
+
+}
+
+
+
+.pictureTwo{
+ border-radius: 8px;
+    width: 47%;
+    height: 150px;
+    background: linear-gradient( to right, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0) 80%), url("../img/agraba.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    margin-left: 390px;
+    
+}
+.picture-span{
+    padding-left: 20px;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 18px;
+    
+}
+.text{
+    width: 44%;
+    margin: 30px 400px 60px;
+    &-India{
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        font-weight: 300;
+        align-content: center;
+        color: rgba(1, 4, 0, 0.5);
+    }
+    
+}
+
+
+
+.travel{
+    margin: 32px;
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.train-card{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 15px;
+    
+}
+.name_title{
+    margin-top: 76px;
+    margin-bottom: -40px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.name{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 24px 24px 0 26px;
+}
+.runs-title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 6px 24px;
+     width: 10%;
+   padding:0 5px;
+
+
+}
+.runs-day{
+    width: 10%;
+    padding: 5px 15px;
+    border: 1px solid rgba( 94 74 227);
+    border-radius: 10px;
+   font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 6px 24px;
+    font-size: 15px;
+}
+.classes{
+    
+    padding: 0  24px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.green{
+    font-weight: 600;
+    gap: 8px;
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    padding: 24px 16px;
+    border: none;
+    width: 30%;
+    text-align: left;
+    background-color:rgba(125, 207, 182, 1);
+}
+ .yellow{
+     font-weight: 600;
+     gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    padding: 24px 16px;
+    border: none;
+    width: 30%;
+    text-align: left;
+    background-color: rgba( 251 209 162);
+}
+.orange{
+     font-weight: 600;
+     gap: 8px;
+    padding: 24px 16px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius:  16px;
+    border: none;
+    width: 30%;
+    text-align: left;
+    background-color: rgba( 247 146 86);
+}
+.train-time{
+    line-height:1.5;
+    padding: 24px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+.duration{
+    padding-top: 30px;
+    color: rgba( 199 209 223);
+}
+.iten{
+    margin-right: 50px;
+}
+.item{
+    display: flex;
+    justify-content: end;
+}
+
+

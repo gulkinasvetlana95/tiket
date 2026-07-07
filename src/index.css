@@ -6,17 +6,19 @@
     padding : 0;
 }
 
-body {
-    background-color: #000000;
+.wrapper {
+    width: 1440px;
     background-image: url('./img/logo_picture.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 1440px;
+    background-position: center;
 }
-.header{
+.main-header{
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .train_logo{
     margin: 50px ;
