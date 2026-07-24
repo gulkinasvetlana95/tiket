@@ -174,5 +174,16 @@
     display: flex;
     justify-content: end;
 }
-
+.class-card{
+    cursor: pointer;
+    position: relative;
+}.class-card:active{
+    transform: scale(0.95);
+    background: #444;
+}
+.class-card:hover{
+    color: white;
+    background-color: rgb(0, 8, 155);
+    box-shadow: 5px 5px 15px rgba(0, 0 ,0, 1);
+}
 

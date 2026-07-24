@@ -1,0 +1,56 @@
+.footer{
+    padding: 64px 64px 64px;
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+    
+
+    &_container{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &_logo{
+         display: flex;
+    }
+
+    &_name{
+        padding: 0 10px;
+        font-size:34px ;
+       font-family: 'Poppins', sans-serif;
+    }
+    &_list{
+        justify-content: end;
+         display: flex;
+         gap: 32px;
+         padding: 0 84px;
+    }
+    &_about{
+        padding: 0 24px;
+        font-weight: 600;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px ;
+        list-style: none;
+
+        &-li{
+            font-weight: 500;
+            font-size: 16px;
+            
+            &:hover{
+                cursor: pointer;
+                font-weight: bold;
+                
+            }
+        }
+    }
+}
+.rights{
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    padding: 60px 0 0 0;
+}
