@@ -1,5 +1,6 @@
 main{
     width: 1440px;
+
 }
 .ticket{
     margin: 96px 126px 60px 126px;
@@ -76,14 +77,25 @@ main{
     flex-direction: column;
    
 }
-.bottom{margin-top: 60px;}
+.bottom{
+    margin-top: 60px;
+}
+
 .city-label{
     font-weight: 600;
     padding: 24px 0 16px;
 }
-.citi-select{ width: 320px;}
-.citi-select__control{padding: 8px 25px 8px 8px; border-radius: 8px !important; }
-.citi-select__option{color:#401585 !important;}
+
+.citi-select{
+     width: 320px;
+    }
+.citi-select__control{
+    padding: 8px 25px 8px 8px; 
+    border-radius: 8px !important; 
+}
+.citi-select__option{
+    color:#401585 !important;
+}
 
 
 .city-input{
@@ -98,9 +110,11 @@ main{
 }
 
 .button-passanger{
+    
     font-weight: 600;
     font-size: 20px;
     margin: 24px 400px 50px;
+    margin-bottom: 150px;
     padding: 15px 0;
     width: 675px;
     border: none;

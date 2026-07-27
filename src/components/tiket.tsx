@@ -1,6 +1,6 @@
 import React from 'react';
 import {useFlight} from "./FlightContext";
-
+import { useNavigate } from 'react-router-dom';
 
 function getArrivalDate(
   
@@ -9,7 +9,6 @@ function getArrivalDate(
   arrivalTime: string
 ) {
   const result = new Date(departureDate);
-
   const [depHour, depMinute] = departureTime.split(":").map(Number);
   const [arrHour, arrMinute] = arrivalTime.split(":").map(Number);
 
@@ -23,6 +22,14 @@ function getArrivalDate(
   }
 
   return result;
+}
+
+type classType = {
+      type: string;
+      price: number;
+      color:string;
+      seats: string;
+
 }
 
 type TrainProps = {
@@ -46,10 +53,19 @@ type TrainProps = {
   };
 };
 
+
 export default function Tiket({ train }: TrainProps) {
 
     const {flightData} = useFlight();
     const departureDate = flightData.departureDate;
+    const navigate = useNavigate();
+    const Booking = (item: classType) =>{navigate("/ReviewBooking", {
+      state: {
+        train,
+        selectedClass :item,
+      }
+    });
+  };
 
     const arrivalDate = departureDate && getArrivalDate(
     departureDate,
@@ -92,8 +108,8 @@ export default function Tiket({ train }: TrainProps) {
 </div>
 
       <div className="classes">
-        {train.classes.map((item) => (
-          <button key={item.type} className={`class-card ${item.color}`}>
+        {train.classes.map((item, index) => (
+          <button key={`${item.type}-${index}`} className={`class-card ${item.color}`} onClick={() => Booking(item)}>
             <p>{item.type}</p> 
             <p className="item">{item.seats}</p>
             <p className="iten">Tatkal</p>

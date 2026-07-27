@@ -1,7 +1,7 @@
 import {useLocation} from "react-router-dom"
 export default function Header() {
     const location = useLocation();
-    const isFlightPage = location.pathname ==="/Flights";
+    const isFlightPage = location.pathname ==="/Flights" || location.pathname === "/ReviewBooking";
   return (
     <header className={isFlightPage ? "FlightsHeader": "main-header"}>
             <div className= "train_logo">
