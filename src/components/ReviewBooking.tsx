@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import { useFlight } from "./FlightContext";
 import rice from "../img/rice.jpg";
 import food from "../img/food.jpg";
@@ -34,6 +35,55 @@ export default function ReviewBooking() {
 
  
   const { flightData } = useFlight();
+
+  const [cart, setCart] = useState<
+  { name: string; price: number }[]
+>([]);
+
+const addToCart = (name: string, price: number) => {
+  setCart(prev => [...prev, { name, price }]);
+};
+
+
+
+
+ const [coupon, setCoupon] = useState("");
+const [discount, setDiscount] = useState(0);
+const [couponApplied, setCouponApplied] = useState(false);
+const [discountName, setDiscountName] = useState("");
+
+ const subtotal =
+  (selectedClass?.price ?? 0) +
+  cart.reduce((sum, item) => sum + item.price, 0);
+
+const applyCoupon = (code: string) => {
+  if (couponApplied) return;
+
+  if (code === "BOOKNOW") {
+    setDiscount(Math.min(subtotal * 0.5, 100));
+    setDiscountName("BOOKNOW");
+  } else if (code === "FIRSTTIME") {
+    setDiscount(subtotal * 0.2);
+    setDiscountName("FIRSTTIME");
+  }
+
+  setCouponApplied(true);
+};
+const applyPromoCode = () => {
+  if (couponApplied) return;
+
+  if (coupon.toUpperCase() === "SVETIK") {
+    setDiscount(subtotal * 0.1);
+    setDiscountName("SVETIK");
+    setCouponApplied(true);
+  } else {
+    alert("Invalid promo code");
+  }
+}
+
+
+
+
 
   const departureDate = flightData.departureDate;
 
@@ -124,17 +174,26 @@ export default function ReviewBooking() {
                 <div className="container_card-info">
                   <span className="container_card-name">Paneer Tikka Rice Bowl - Mini</span>
                   <p className="container_card-price">₹200.00</p>
-                  <button className="container_btn">Add Ticket</button>
+                  <button className="container_btn" 
+                         onClick={() => 
+                           addToCart("Paneer Tikka Rice Bowl - Mini", 200.00)
+                          }>Add Ticket</button>
                 </div>
                 <div className="container_card-info">
                   <span className="container_card-nameTwo">Grilled Tandoori Chicken with dry fruits</span>
                   <p className="container_card-price">₹500.00</p>
-                  <button className="container_btn">Add Ticket</button>
+                  <button className="container_btn"
+                       onClick={()=>
+                        addToCart("Grilled Tandoori Chicken with dry fruits", 500.00)
+                       }>Add Ticket</button>
                 </div>
                 <div className="container_card-info">
                   <span className="container_card-name">Aloo Paratha Curd Meal (2 pcs) </span>
                   <p className="container_card-price">₹120.00</p>
-                  <button className="container_btn">Add Ticket</button>
+                  <button className="container_btn"  
+                       onClick={() => 
+                        addToCart("Aloo Paratha Curd Meal", 120.00)
+                        }> Add Ticket</button>
                </div>
                </div>
             </div>
@@ -148,26 +207,68 @@ export default function ReviewBooking() {
                     <div className="card_sale">
                         <img className="card_sale-img" src={procent} alt="procent"/>
                         <p className="card_sale-pT">50% off up to ₹100 | Use code BOOKNOW</p>
-                        <button className="card_sale-btn">Apply</button>
+                        <button className="card_sale-btn"
+                           onClick={() => applyCoupon("BOOKNOW")}
+                           disabled={couponApplied}>Apply</button>
                     </div>
 
                    <div className="card_sale">
                       <img className="card_sale-img" src={procent} alt="procent"/>
                       <p  className="card_sale-p">20% off | Use code FIRSTTIME</p>
-                      <button className="card_sale-btn">Apply</button>
+                      <button className="card_sale-btn" 
+                          onClick={() => applyCoupon("FIRSTTIME")}
+                          disabled={couponApplied}>Apply</button>
                    </div>
 
             </div>
             <div className="sale">
                 <div className="sale_discont">
                   <label className="sale-name" id="sale"> Apply Code </label>
-                  <input className="sale-name-input" type="text" id="sale" placeholder="Enter Code"></input>
+                  <input className="sale-name-input" type="text" id="sale"
+                   value={coupon}
+                   onChange={(e) => setCoupon(e.target.value)}
+                   onKeyDown={(e) => {
+                     if (e.key === "Enter") {
+                     applyPromoCode();
+                    }
+                  }} placeholder="Enter Code"></input>
                 </div>
                 <div className="sale_discont">
                   <span className="sale-name"> Extra Baggage </span>
-                  <button className="sale-name-btn">Add to Ticket</button>
+                  <button className="sale-name-btn"
+                  onClick={() => 
+                        addToCart("Extra Baggage", 500.00)
+                        }>Add to Ticket</button>
                 </div>
             </div>
+
+            <div className="booking_summa">
+              <p className="booking_bill">Bill details</p>
+                <div className="booking_BaseTicket">
+                  <span>Base Ticket Fare</span>
+                  <span> ₹{selectedClass?.price}</span>
+                  </div>
+                  <div>
+                  {cart.map((item, index) => (
+                   <div className="booking_BaseTicket" key={index}>
+                     <span>{item.name}</span>
+                     <span>₹{item.price}</span>
+                   </div>
+                  ))}
+                </div>
+                {discount > 0 && (
+                   <div className="booking_BaseTicket">
+                     <span> <strong>Discount</strong></span>
+                     <span><strong>-₹{discount.toFixed(2)}</strong></span>
+                  </div>
+                )}
+                 <div className="booking_bill">
+                   <strong>Total Charge</strong>
+                   <strong>₹{subtotal - discount}</strong>
+                   </div>
+
+            </div>
+
 
         </div>
     );

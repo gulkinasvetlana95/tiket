@@ -13,6 +13,34 @@
     font-weight: 400;
     padding-bottom: 50px ;
    }
+
+   &_summa{
+    display: flex;
+    flex-direction: column;
+    border:1px solid #7F817F;
+    border-radius: 10px;
+    background-color: white;
+    padding: 32px 24px;
+   }
+   
+
+    &_bill{
+        display: flex;
+        justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+   }
+   &_BaseTicket{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: rgba(1, 4, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+   }
+  
 }
 .card-booking{
     background-color: rgb(230 228 244);
@@ -245,6 +273,11 @@
         padding-right: 24px;
         background-color: white;
         color:#5E4AE3;
+        &:hover{
+            cursor: pointer;
+            color: red;
+            
+        }
 
        }
     }
@@ -283,6 +316,12 @@
             border:1px solid #5E4AE3;
             border-radius: 10px;
             background-color: white;
+            &:hover{
+                cursor: pointer;
+                color: white;
+                background-color: #5E4AE3;
+
+            }
         }
 
     }
