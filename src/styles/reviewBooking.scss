@@ -1,10 +1,6 @@
 .booking{
    display: flex;
    flex-direction: column;
-   background-color: rgb( 245 245 245);
-   padding: 32px 400px;
-  
-   
 
    &_name{
     color: rgb(104 85 228) ;
@@ -41,6 +37,13 @@
     font-weight: 500;
    }
   
+}
+.bookingON{
+    display: flex;
+   flex-direction: column;
+   background-color: rgb( 245 245 245);
+   padding: 32px 400px;
+
 }
 .card-booking{
     background-color: rgb(230 228 244);
@@ -107,6 +110,7 @@
         color:#01040080 ;
     }
     &_passenger{
+        margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,6 +148,20 @@
         }
     }
 }
+&_birthDate{
+    width: 88%;
+    margin: 16px 0 0;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F5F5F5;}
+
+    &_nameBirth{
+        padding: 16px 0 0;
+        font-size: 16px;
+        font-weight: 500;
+         font-family: 'Poppins', sans-serif;
+    }
 }
 .container{
     &_btn{
@@ -308,7 +326,7 @@
             border-bottom: 1px solid #7F817F;
         }
         &-btn{
-            width: 57%;
+            width: 60%;
             padding: 10px 25px;
             font-size: 14px;
             font-weight: 500;
@@ -326,3 +344,119 @@
 
     }
 }
+.Button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    
+    &_text{
+        padding: 16px 0;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: #7F817F;
+    }
+    &_book{
+        margin: 0 125px;
+        width: 63%;
+        padding: 16px ;
+        background-color: #5E4AE3;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        &:hover{
+            cursor: pointer;
+            background-color:#4536a6;
+            color: white;
+        }
+    }
+    &_cancel{
+        margin: 16px 125px 30px;
+        width: 63%;
+        padding: 16px ;
+        background-color: #F5F5F5;
+        border-radius: 10px;
+        border: 1px solid red;
+        color:red;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        &:hover{
+            cursor: pointer;
+            background-color: red;
+            color: white;
+        }
+    }
+    &_ul{
+        margin-bottom: 110px;
+        gap: 30px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7F817F;
+    }
+}
+
+
+.modal_overlay {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+   z-index: 9999;
+
+   &_content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+   }
+&_title {
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+&_text {
+  font-size: 16px;
+  margin-bottom: 20px;
+
+}
+}
+
+.modal button {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background: #b71c1c;
+}
+

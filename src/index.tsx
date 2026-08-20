@@ -5,6 +5,7 @@ import App from './App';
 import { FlightProvider } from './components/FlightContext';
 
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

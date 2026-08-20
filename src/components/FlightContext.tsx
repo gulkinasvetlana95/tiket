@@ -13,13 +13,25 @@ type SelectedTrain = {
   train : string;
   classType: string;
   price: number;
-}
+};
+type SelectedClass = {
+  type: string;
+  price: number;
+};
+type BookingData = {
+  train: any | null;
+  selectedClass: SelectedClass | null;
+  cart: { name: string; price: number }[];
+  discount: number;
+};
 
 type FlightContextType = {
   flightData: FlightData;
   selectedTrain: SelectedTrain | null;
+  bookingData: BookingData;
   setSelectedTrain: React.Dispatch<React.SetStateAction<SelectedTrain | null >>;
   setFlightData: React.Dispatch<React.SetStateAction<FlightData>>;
+  setBookingData: React.Dispatch<React.SetStateAction<BookingData>>;
 };
 
 const FlightContext = createContext<FlightContextType | null>(null);
@@ -35,9 +47,14 @@ export const FlightProvider = ({ children }: { children: React.ReactNode }) => {
     returnDate: null
   });
   const [selectedTrain, setSelectedTrain] = useState<SelectedTrain | null>(null)
-
+const [bookingData, setBookingData] = useState<BookingData>({
+  train: null,
+  selectedClass: null,
+  cart: [],
+  discount: 0,
+});
   return (
-    <FlightContext.Provider value={{ flightData, setFlightData, selectedTrain, setSelectedTrain }}>
+    <FlightContext.Provider value={{ flightData, setFlightData, selectedTrain, setSelectedTrain, bookingData, setBookingData }}>
       {children}
     </FlightContext.Provider>
   );

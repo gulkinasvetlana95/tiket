@@ -1,0 +1,52 @@
+.payment-container {
+    
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.payment {
+    width: 50%;
+   
+    margin: 0 auto;
+    padding: 20px;
+    
+    &_name {
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color:  #5E4AE3 ;
+    }
+    
+}
+.priceRED {
+    color: #d32f2f;
+    font-size: 32px;
+}
+
+.info{
+    padding: 24px;
+
+    &_name{
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    }
+
+    &-passenger, &_meal, &_email {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    }
+    &-passenger{
+        font-weight: 550;
+    }
+
+   
+    &_email{
+        padding: 10px 0;
+    }
+}
