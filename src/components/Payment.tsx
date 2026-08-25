@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import procent from "../img/procent.png";
 import ReviewBooking from "./ReviewBooking";
+import PayMethod from "./PayMethod";
 
 export default function Payment() {
  const location = useLocation();
@@ -200,6 +201,14 @@ const formatDate = (date: string | undefined) => {
                    </div>
 
             </div>
+            <div>
+              < PayMethod />
+            </div>
+            <div className="policy">
+  <p>Cancellation Policy </p>
+  <p>Terms & Conditions Travel </p>
+  <p>Insurance</p>
+  </div>
 
     </div>
     

@@ -3,6 +3,7 @@ import Main from './components/main';
 import Flights from "./components/Flights";
 import ReviewBooking from './components/ReviewBooking';
 import Payment from './components/Payment';
+import PayMethod from './components/PayMethod';
 
 import './index.css';
 import './styles/style.scss';
