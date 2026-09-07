@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect} from "react";
 import { useFlight } from "./FlightContext";
 import procent from "../img/procent.png";
-import { useNavigate } from "react-router-dom";
+
 
 
 function getArrivalDate(

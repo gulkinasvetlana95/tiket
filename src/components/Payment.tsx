@@ -11,9 +11,6 @@ export default function Payment() {
 const [couponApplied, setCouponApplied] = useState(false);
 const [discountName, setDiscountName] = useState("");
 
-
-
-
     type Passenger = {
   fullName: string;
   phone: string;

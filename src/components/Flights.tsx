@@ -2,7 +2,6 @@ import user from "../img/user.png"
 import {useFlight} from "./FlightContext"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from 'react';
 import Tiket from "./tiket";
 import {trains} from "../data/trains";
 import Footer from "./Footer";

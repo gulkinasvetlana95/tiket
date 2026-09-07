@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useState } from 'react';
 import user from '../img/user.png';
 import DatePicker from 'react-datepicker';
@@ -78,7 +78,7 @@ const handleTicket = () => {
        />
       
         <label className="city-label">Pick your lucky day</label>
-         <DatePicker className="city-input" selected={departureDate} onChange={(date: Date | null) => setDepartureDate(date)} dateFormat="d MMMM" placeholderText="Departure"/>
+         <DatePicker className="city-input" selected={departureDate} onChange={(date: Date | null) => setDepartureDate(date)} dateFormat="d MMMM" minDate={new Date()} placeholderText="Departure"/>
       </div>
 
       <div className= "arrival">
